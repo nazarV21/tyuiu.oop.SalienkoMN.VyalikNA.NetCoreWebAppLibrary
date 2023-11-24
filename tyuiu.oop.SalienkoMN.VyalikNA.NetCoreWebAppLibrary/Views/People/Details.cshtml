@@ -1,0 +1,36 @@
+﻿@model tyuiu.oop.SalienkoMN.VyalikNA.NetCoreWebAppLibrary.DataModels.People
+
+@{
+    ViewData["Title"] = "Вся информация";
+}
+
+<h1>Информация о клиенте</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.Name) *@
+            Имя
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Номер
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Number)
+        </dd>
+        <dt class = "col-sm-2">
+            Книги
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Books)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Редактировать</a> |
+    <a asp-action="Index">Вернуться</a>
+</div>
