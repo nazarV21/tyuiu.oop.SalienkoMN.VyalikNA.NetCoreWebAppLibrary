@@ -18,29 +18,27 @@ namespace tyuiu.oop.SalienkoMN.VyalikNA.NetCoreWebAppLibrary.Controllers
             _context = context;
         }
 
-        /*public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString)
         {
-            if (_context.People == null)
-            {
-                return Problem("Ничего не нашлось!");
-            }
+            var name = from b in _context.People
+                       select b;
 
-            var name = from m in _context.People
-                        select m;
+            var number = from n in _context.People
+                       select n;
+
+           /* if (!String.IsNullOrEmpty(searchString))
+            {
+                name = name.Where(b => b.Name!.Contains(searchString));
+                return View(await name.ToListAsync());
+            }*/
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                name = name.Where(s => s.Name!.Contains(searchString));
+                number = number.Where(n => n.Number!.Contains(searchString));
             }
 
-            return View(await name.ToListAsync());
-        }*/
 
-
-        // GET: People
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.People.ToListAsync());
+            return View(await number.ToListAsync());
         }
 
         // GET: People/Details/5

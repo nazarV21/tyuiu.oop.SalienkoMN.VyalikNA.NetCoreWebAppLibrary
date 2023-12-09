@@ -1,0 +1,46 @@
+﻿@model IEnumerable<tyuiu.oop.SalienkoMN.VyalikNA.NetCoreWebAppLibrary.DataModels.People>
+
+@{
+    ViewData["Title"] = "База людей";
+}
+
+<h1 style="margin-bottom: 25px;">Информация</h1>
+
+<form asp-controller="People" asp-action="Index" method="get">
+    <p>
+        Введите имя: <input type="text" name="SearchString" />
+        <input type="submit" value="Поиск" />
+    </p>
+</form>
+<p>
+    <a asp-action="Create">Добавить</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Номер</th>
+            <th>Книги</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Books)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Подробнее</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

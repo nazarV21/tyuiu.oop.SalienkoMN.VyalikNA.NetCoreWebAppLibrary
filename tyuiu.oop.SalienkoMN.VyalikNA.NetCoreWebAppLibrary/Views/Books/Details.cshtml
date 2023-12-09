@@ -1,0 +1,36 @@
+﻿@model tyuiu.oop.SalienkoMN.VyalikNA.NetCoreWebAppLibrary.DataModels.Book
+
+@{
+    ViewData["Title"] = "Вся информация";
+}
+
+<h1>Информация о книге</h1>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            №Полки
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BookShelf)
+        </dd>
+        <dt class = "col-sm-2">
+            Название
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            Автор
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Редактировать</a> |
+    <a asp-action="Index">Вернуться</a>
+</div>

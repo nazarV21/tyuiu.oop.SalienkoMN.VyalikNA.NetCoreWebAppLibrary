@@ -4,7 +4,12 @@
 
 <div class="text-center">
     <h1 class="display-4" style="margin-bottom: 150px">Добро пожаловать в библиотеку</h1>
-    <button class="btn-home add-people" style="font-size: 30px; border-radius: 8px;">
-        <a asp-area="" asp-controller="People" asp-action="Index" style="margin: 5px">Добавить человека</a>
-    </button>
+	<div class="home-buttons" style="display: flex;flex-direction: column;padding: 0 500px;gap: 20px;">
+		<button class="btn-home add-people" style="font-size: 30px; border-radius: 8px;">
+			<a asp-area="" asp-controller="People" asp-action="Index" style="margin: 5px">Добавить человека</a>
+		</button>
+		<button class="btn-home add-people" style="font-size: 30px; border-radius: 8px;">
+			<a asp-area="" asp-controller="Books" asp-action="Index" style="margin: 5px">Перейти к книгам</a>
+		</button>
+	</div>
 </div>

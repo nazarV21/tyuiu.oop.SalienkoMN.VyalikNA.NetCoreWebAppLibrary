@@ -7,10 +7,9 @@ using tyuiu.oop.SalienkoMN.VyalikNA.NetCoreWebAppLibrary.DataModels;
 
     public class LibraryContext : DbContext
     {
-        public LibraryContext (DbContextOptions<LibraryContext> options)
-            : base(options)
-        {
-        }
+        public LibraryContext (DbContextOptions<LibraryContext> options): base(options) { }
 
         public DbSet<tyuiu.oop.SalienkoMN.VyalikNA.NetCoreWebAppLibrary.DataModels.People> People { get; set; } = default!;
+
+        public DbSet<tyuiu.oop.SalienkoMN.VyalikNA.NetCoreWebAppLibrary.DataModels.Book> Book { get; set; } = default!;
     }
